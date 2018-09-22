@@ -39,6 +39,7 @@ async function getCourses() {
     .limit(2)
     .sort({ name: 1 })
     .select({ name: 1, tags: 1 });
+  // .count(); // this will return number of document match the cretieria
   console.log(courses);
 }
 
