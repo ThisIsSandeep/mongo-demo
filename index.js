@@ -29,10 +29,17 @@ async function createCourse() {
     tags: ['vanilla', 'es6'],
     isPublished: true
   });
-
   // save is a async function which return a promise so we need to use await and wrap it to async function
   const result = await course.save();
   console.log(result);
 }
 
-createCourse();
+async function getCourses() {
+  const courses = await Course.find({ isPublished: true })
+    .limit(2)
+    .sort({ name: 1 })
+    .select({ name: 1, tags: 1 });
+  console.log(courses);
+}
+
+getCourses();
