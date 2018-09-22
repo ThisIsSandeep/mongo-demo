@@ -18,3 +18,21 @@ const courseSchema = new mongoose.Schema({
   date: { type: Date, default: Date.now },
   isPublished: Boolean
 });
+
+// To use our schema definition, we need to convert our courseSchema into a Model we can work with. To do so, we pass it into mongoose.model(modelName, schema):
+const Course = mongoose.model('Course', courseSchema);
+
+async function createCourse() {
+  const course = new Course({
+    name: 'JavaScript Course',
+    author: 'Sandeep',
+    tags: ['vanilla', 'es6'],
+    isPublished: true
+  });
+
+  // save is a async function which return a promise so we need to use await and wrap it to async function
+  const result = await course.save();
+  console.log(result);
+}
+
+createCourse();
