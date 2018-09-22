@@ -43,3 +43,23 @@ async function getCourses() {
 }
 
 getCourses();
+
+// Comparision query operators
+// eq (equal)
+// ne (ne)
+// gt (greater than)
+// gte (greater than or equal)
+// lt (less than)
+// lte (less than or equal)
+// in
+// nin (not in)
+
+// Find where price is 10
+// find({price: 10})
+
+// Find where price is greater than 10
+// find({price: {$gt: 10} })
+// Find where price is greater than 10 and less than 20
+// find({price: {$gt: 10, $lt: 20} })
+// find where price is 10, 15, 20
+// find({price: {$in: [10, 15, 20]} })
