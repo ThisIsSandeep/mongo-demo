@@ -44,7 +44,7 @@ async function getCourses() {
 
 getCourses();
 
-// Comparision query operators
+// ----------------------------- Comparision query operators ------------------------- //
 // eq (equal)
 // ne (ne)
 // gt (greater than)
@@ -63,3 +63,13 @@ getCourses();
 // find({price: {$gt: 10, $lt: 20} })
 // find where price is 10, 15, 20
 // find({price: {$in: [10, 15, 20]} })
+
+// ----------------------------- Logical query operators ------------------------- //
+// or
+// and
+
+// Find where author is sandeep or isPublished is true
+// .find().or([ {author: 'sandeep'}, {isPublished: true} ])
+
+// Find where author is sandeep and isPublished is true
+// .find().and([ {author: 'sandeep'}, {isPublished: true} ])
