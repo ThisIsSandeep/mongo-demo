@@ -73,3 +73,13 @@ getCourses();
 
 // Find where author is sandeep and isPublished is true
 // .find().and([ {author: 'sandeep'}, {isPublished: true} ])
+
+// ----------------------------- Regular Expression ------------------------- //
+// Start with sandeep (i ---> case insensitive)
+// .find({ author:  /^Sandeep/i })
+
+// End with sandeep
+// .find({ author: /Sandeep$/i })
+
+// Contains sandeep
+// .find({ author: /.*Sandeep.*/i })
