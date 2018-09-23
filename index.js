@@ -43,7 +43,22 @@ async function getCourses() {
   console.log(courses);
 }
 
-getCourses();
+async function updateCourse(id) {
+  // Query First approach
+  const course = await Course.findById(id);
+  if (!course) return;
+  course.author = 'another author after update';
+  const result = await course.save();
+  console.log(result);
+}
+
+async function removeCourse(id) {
+  const result = await Course.deleteOne({ _id: id });
+  // const course = await Course.findByIdAndRemove(id);
+  console.log(result);
+}
+
+removeCourse('5ba611f6d3db6402ea736853');
 
 // ----------------------------- Comparision query operators ------------------------- //
 // eq (equal)
